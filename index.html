@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SG Carbon Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <h1 class="logo">SG Carbon Calculator</h1>
+      <span class="badge">Singapore</span>
+    </div>
+    <div class="header-right">
+      <button id="settingsBtn" class="icon-btn" title="AI Settings" aria-label="AI Settings">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button id="themeToggle" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="main-grid">
+
+    <!-- Input Panel -->
+    <section class="input-panel">
+      <h2 class="section-title">Your Lifestyle</h2>
+
+      <!-- Energy -->
+      <div class="card input-card">
+        <button class="accordion-header active" data-target="energy-body">
+          <span class="accordion-icon">&#127968;</span> Energy
+          <span class="chevron"></span>
+        </button>
+        <div class="accordion-body open" id="energy-body">
+          <label class="field">
+            <span>Monthly Electricity (kWh)</span>
+            <input type="number" id="electricity" value="350" min="0" step="10">
+          </label>
+          <label class="field">
+            <span>Household Size</span>
+            <select id="householdSize">
+              <option value="1">1 person</option>
+              <option value="2">2 people</option>
+              <option value="3" selected>3 people</option>
+              <option value="4">4 people</option>
+              <option value="5">5+ people</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Aircon Usage (hours/day)</span>
+            <input type="number" id="aircon" value="4" min="0" max="24" step="0.5">
+          </label>
+          <label class="field">
+            <span>Housing Type</span>
+            <select id="housingType">
+              <option value="hdb" selected>HDB</option>
+              <option value="condo">Condo</option>
+              <option value="landed">Landed</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <!-- Transport -->
+      <div class="card input-card">
+        <button class="accordion-header" data-target="transport-body">
+          <span class="accordion-icon">&#128663;</span> Transport
+          <span class="chevron"></span>
+        </button>
+        <div class="accordion-body" id="transport-body">
+          <label class="field">
+            <span>Primary Mode</span>
+            <select id="transportMode">
+              <option value="mrt" selected>MRT</option>
+              <option value="bus">Bus</option>
+              <option value="car-petrol">Car (Petrol)</option>
+              <option value="car-hybrid">Car (Hybrid)</option>
+              <option value="car-ev">Car (EV)</option>
+              <option value="ride-hailing">Ride-hailing</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Weekly Distance (km)</span>
+            <input type="number" id="weeklyDistance" value="50" min="0" step="5">
+          </label>
+        </div>
+      </div>
+
+      <!-- Food -->
+      <div class="card input-card">
+        <button class="accordion-header" data-target="food-body">
+          <span class="accordion-icon">&#127869;</span> Food
+          <span class="chevron"></span>
+        </button>
+        <div class="accordion-body" id="food-body">
+          <label class="field">
+            <span>Diet Type</span>
+            <select id="dietType">
+              <option value="meat-heavy">Meat-heavy</option>
+              <option value="balanced" selected>Balanced</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Meals Eaten Out / Week</span>
+            <input type="number" id="mealsOut" value="5" min="0" max="21" step="1">
+          </label>
+        </div>
+      </div>
+
+      <!-- Waste -->
+      <div class="card input-card">
+        <button class="accordion-header" data-target="waste-body">
+          <span class="accordion-icon">&#128465;</span> Waste
+          <span class="chevron"></span>
+        </button>
+        <div class="accordion-body" id="waste-body">
+          <label class="field">
+            <span>Recycling Habit</span>
+            <select id="recycling">
+              <option value="never">Never</option>
+              <option value="sometimes" selected>Sometimes</option>
+              <option value="often">Often</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Plastic Usage</span>
+            <select id="plasticUsage">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Online Shopping Frequency</span>
+            <select id="onlineShopping">
+              <option value="rarely">Rarely</option>
+              <option value="monthly" selected>Monthly</option>
+              <option value="weekly">Weekly</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Dashboard -->
+    <section class="results-panel">
+      <h2 class="section-title">Your Carbon Footprint</h2>
+
+      <!-- Total -->
+      <div class="card total-card">
+        <div class="total-value">
+          <span id="totalCO2">0</span>
+          <span class="total-unit">kg CO<sub>2</sub>/month</span>
+        </div>
+        <div class="status-indicator" id="statusIndicator">
+          <span class="status-dot"></span>
+          <span class="status-text" id="statusText">Calculating...</span>
+        </div>
+      </div>
+
+      <!-- Category Breakdown -->
+      <div class="breakdown-grid">
+        <div class="card breakdown-card" data-category="energy">
+          <span class="breakdown-icon">&#127968;</span>
+          <span class="breakdown-label">Energy</span>
+          <span class="breakdown-value" id="energyValue">0</span>
+          <span class="breakdown-unit">kg</span>
+        </div>
+        <div class="card breakdown-card" data-category="transport">
+          <span class="breakdown-icon">&#128663;</span>
+          <span class="breakdown-label">Transport</span>
+          <span class="breakdown-value" id="transportValue">0</span>
+          <span class="breakdown-unit">kg</span>
+        </div>
+        <div class="card breakdown-card" data-category="food">
+          <span class="breakdown-icon">&#127869;</span>
+          <span class="breakdown-label">Food</span>
+          <span class="breakdown-value" id="foodValue">0</span>
+          <span class="breakdown-unit">kg</span>
+        </div>
+        <div class="card breakdown-card" data-category="waste">
+          <span class="breakdown-icon">&#128465;</span>
+          <span class="breakdown-label">Waste</span>
+          <span class="breakdown-value" id="wasteValue">0</span>
+          <span class="breakdown-unit">kg</span>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="charts-grid">
+        <div class="card chart-card">
+          <h3>Distribution</h3>
+          <canvas id="pieChart"></canvas>
+        </div>
+        <div class="card chart-card">
+          <h3>vs Singapore Average</h3>
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
+
+      <!-- AI Insights -->
+      <div class="card ai-card">
+        <div class="ai-header">
+          <h3>AI-Powered Insights</h3>
+          <button id="generateInsights" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            Generate Smart Insights
+          </button>
+        </div>
+        <div id="aiInsights" class="ai-content">
+          <p class="ai-placeholder">Configure your AI provider in Settings, then click "Generate Smart Insights" to receive personalized recommendations.</p>
+        </div>
+      </div>
+
+      <!-- Export -->
+      <div class="export-bar">
+        <button id="exportBtn" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export Results
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Settings Modal -->
+  <div class="modal-overlay" id="settingsModal">
+    <div class="modal card">
+      <div class="modal-header">
+        <h2>AI Settings</h2>
+        <button class="icon-btn modal-close" id="closeSettings" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <label class="field">
+          <span>AI Provider</span>
+          <select id="aiProvider">
+            <option value="openai">OpenAI (GPT-4o mini)</option>
+            <option value="gemini">Google Gemini (Flash)</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>API Key</span>
+          <input type="password" id="apiKey" placeholder="Enter your API key">
+        </label>
+        <div class="privacy-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          API keys are stored locally in your browser and never sent to any server except the selected AI provider.
+        </div>
+        <button id="saveSettings" class="btn btn-primary" style="width:100%;margin-top:1rem;">Save Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>SG Carbon Calculator &mdash; Helping Singapore reduce its carbon footprint, one household at a time.</p>
+    <p class="footer-note">Emission factors based on Singapore's Energy Market Authority data. Estimates are approximate.</p>
+    <p class="footer-powered">Powered by <a href="https://www.tertiarycourses.com.sg/" target="_blank" rel="noopener noreferrer">Tertiary Infotech Academy Pte Ltd</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="charts.js"></script>
+  <script src="ai.js"></script>
+</body>
+</html>
