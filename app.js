@@ -276,7 +276,7 @@ $('exportBtn').addEventListener('click', () => {
   if (!results) return;
 
   const profile = getUserProfile();
-  const text = `SG Carbon Footprint Report
+  const text = `SG Carbon Footprint Calculator Report
 ========================
 Date: ${new Date().toLocaleDateString()}
 
